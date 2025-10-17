@@ -1,44 +1,299 @@
-/* --- Responsive Fixes --- */
-@media screen and (max-width: 1366px) {
-  body {
-    zoom: 0.9;
+/* =============================
+   PORTFOLIO WEBSITE CSS — BHARATH GANGA
+   ============================= */
+
+:root {
+  --bg: #0b1020;
+  --card: #0f1724;
+  --muted: #94a3b8;
+  --accent: #7c3aed;
+  --light: #f4f4f4;
+  --dark: #05060a;
+}
+
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== BODY ===== */
+body {
+  font-family: "Inter", "Segoe UI", Roboto, system-ui, Arial, sans-serif;
+  background: linear-gradient(180deg, #05060a 0%, #071028 60%);
+  color: #e6eef8;
+  line-height: 1.5;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1000px;
+  margin: 36px auto;
+  padding: 24px;
+}
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), #2563eb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 28px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.tag {
+  color: var(--muted);
+  margin-top: 6px;
+  min-height: 24px;
+}
+
+.links {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+a.badge {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+a.badge:hover {
+  background: rgba(124, 58, 237, 0.2);
+  color: white;
+}
+
+/* ===== MAIN ===== */
+main {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  margin-top: 22px;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+/* Appear effect */
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section h2 {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  color: #fff;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ===== SKILLS ===== */
+ul.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+}
+
+ul.skills li {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #dbeafe;
+  transition: 0.3s;
+}
+
+ul.skills li:hover {
+  background: rgba(124, 58, 237, 0.3);
+}
+
+/* ===== PROJECTS ===== */
+.project {
+  margin-bottom: 12px;
+}
+
+.project h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.small {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ===== DOWNLOAD BUTTON ===== */
+.download {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--accent), #2563eb);
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.download:hover {
+  background: linear-gradient(90deg, #6d28d9, #1d4ed8);
+  transform: translateY(-2px);
+}
+
+/* ===== EDUCATION / CERTIFICATES ===== */
+.edu-item {
+  margin-bottom: 8px;
+}
+
+.certs li {
+  margin-bottom: 6px;
+}
+
+.pill {
+  display: inline-block;
+  padding: 6px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 13px;
+}
+
+/* ===== CONTACT LIST ===== */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  margin-top: 26px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* ===== BACK TO TOP BUTTON ===== */
+#backToTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
+}
+
+#backToTop:hover {
+  background: #5b21b6;
+  transform: translateY(-3px);
+}
+
+/* ===== THEME TOGGLE ===== */
+.theme-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.theme-toggle:hover {
+  background: rgba(124, 58, 237, 0.3);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media screen and (max-width: 1024px) {
-  .hero {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+section {
+  animation: fadeInUp 0.8s ease both;
+}
 
-  .hero img {
-    width: 140px;
-    height: 140px;
-    margin-bottom: 15px;
-  }
+/* ===== LINKS ===== */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s;
+}
 
+a:hover {
+  color: #a78bfa;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  .links {
+    justify-content: flex-end;
+  }
+  .avatar {
+    width: 90px;
+    height: 90px;
+    font-size: 22px;
+  }
   h1 {
-    font-size: 1.8rem;
-  }
-
-  .contact-info {
-    font-size: 0.9rem;
-  }
-
-  .button-group {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  button {
-    margin: 5px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  body {
-    padding: 20px;
-    zoom: 0.8;
+    font-size: 24px;
   }
 }
